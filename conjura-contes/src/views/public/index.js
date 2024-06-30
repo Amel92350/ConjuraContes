@@ -1,9 +1,15 @@
-import Fonction from './Fonction.vue'
-import Home from './Home.vue'
-import About from './About.vue'
-import NotFound from './NotFound.vue'
-import PublicLayout from './Layout.vue'
+import Accueil from './Accueil.vue'
+import Boutique from './Boutique.vue'
+import CarteDeProgression from './CarteDeProgression.vue'
+import JeuxEtQuiz from './JeuxEtQuiz.vue'
+import QuetesQuotidiennes from './QuetesQuotidiennes.vue'
+import SectionsDapprentissage from './SectionsDapprentissage.vue'
 
 export {
-    Fonction,Home,About,NotFound,PublicLayout
+    Accueil,
+    Boutique,
+    CarteDeProgression,
+    JeuxEtQuiz,
+    QuetesQuotidiennes,
+    SectionsDapprentissage
 }

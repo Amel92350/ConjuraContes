@@ -1,40 +1,26 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
-import { Home,Fonction,PublicLayout,About,NotFound } from '@/views/public'
-import { Dashboard,AdminLayout,UserAdd,UserEdit,UserIndex } from '@/views/admin'
-import Login from '@/views/auth/Login.vue'
-import {authGuard} from '@/_helpers/auth-guard'
-
+import { createRouter, createWebHistory,VueRouter } from 'vue-router'
+import Vue, { compileToFunction } from 'vue'
+import { Accueil,Boutique,
+  CarteDeProgression,
+  JeuxEtQuiz,
+  QuetesQuotidiennes,
+  SectionsDapprentissage } from '@/views/public'
+import Present from '@/components/Present.vue'
+import PasseCompose from '@/components/PasseCompose.vue'
+import Quiz from '@/components/Quiz.vue'
+import CompletionTexte from '@/components/CompletionTexte.vue'
 
 const routes = [
-
-  {
-    path:'/',
-    name:'public',
-    component:PublicLayout,
-    children: [
-      {path: '/',name: 'home',component: Home},
-      {path:'/fonction',name : 'fontion',component: Fonction},
-      {path:'/about',name:'about',component:About}
-    ]
-  },
-  {
-    path:'/admin',
-    name:'admin',
-    component:AdminLayout,
-    children:[
-      {path:'dashboard',name:'dashboard',component:Dashboard},
-      {path:'users/index',component:UserIndex},
-      {path:'users/edit/:id(\\d+)',component:UserEdit,props:true},
-      {path:'users/add',component:UserAdd}
-    ]
-  },
-  {
-    path:'/login',name:'login',component:Login
-  },
-  {
-    path:'/:pathMatch(.*)*', component: NotFound
-  }
+  { path: '/', name: 'Accueil', component: Accueil },
+  { path: '/carte-de-progression', name: 'CarteDeProgression', component: CarteDeProgression },
+  { path: '/sections-daprentissage', name: 'SectionsDaprentissage', component: SectionsDapprentissage },
+  { path: '/jeux-et-quiz', name: 'JeuxEtQuiz', component: JeuxEtQuiz },
+  { path: '/quetes-quotidiennes', name: 'QuetesQuotidiennes', component: QuetesQuotidiennes },
+  { path: '/boutique', name: 'Boutique', component: Boutique },
+  { path: '/apprentissage/present', name: 'Present', component: Present },
+  { path: '/apprentissage/passe-compose', name: 'PasseCompose', component:PasseCompose },
+  { path: '/jeux/quiz', name: 'Quiz', component: Quiz },
+  { path: '/jeux/completion-texte', name: 'CompletionTexte', component: CompletionTexte },
 ]
 
 const router = createRouter({
